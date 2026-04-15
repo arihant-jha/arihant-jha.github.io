@@ -7,3 +7,4 @@ env/
 /.envrc
 dist/
 .sesskey
+.codex/

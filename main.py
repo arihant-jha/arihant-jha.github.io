@@ -3,6 +3,10 @@ from fasthtml.common import *
 hdrs = (
     Script(src="https://cdn.tailwindcss.com"),
     Link(
+        rel="icon",
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⚡️</text></svg>",
+    ),
+    Link(
         rel="stylesheet",
         href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css",
     ),
@@ -11,7 +15,7 @@ hdrs = (
         href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Space+Grotesk:wght@400;500;600&display=swap",
     ),
 )
-app = FastHTML(hdrs=hdrs, debug=True)
+app = FastHTML(hdrs=hdrs, debug=True, title="axh | my idealand")
 rt = app.route
 
 TABS = [
@@ -32,7 +36,6 @@ TABS = [
 @rt("/")
 def get():
     return Div(
-        Title("axh"),
         Div(
             Div(
                 H1("axh", cls="text-4xl font-semibold tracking-tight"),
