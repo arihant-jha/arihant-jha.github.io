@@ -1,22 +1,12 @@
-from fasthtml.common import FastHTML, Html, Head, Title, Body, H1, Meta
-from fasthtml.common import serve
+from fasthtml.common import *
 
-app = FastHTML()
+hdrs = (picolink, Script(src="https://cdn.tailwindcss.com"),
+    Link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"))
+app = FastHTML(hdrs=hdrs)
+rt = app.route
 
-
-@app.get("/")
-def home():
-    return Html(
-        Head(
-            Title("Hello World"),
-            Meta(charset="utf-8"),
-            Meta(name="viewport", content="width=device-width, initial-scale=1"),
-        ),
-        Body(
-            H1("Hello World"),
-        ),
-    )
-
+@rt('/')
+def get(): return Div(P('Hello World!'), hx_get="/change")
 
 if __name__ == "__main__":
-    serve()
+    serve(port=5050, reload=True)
