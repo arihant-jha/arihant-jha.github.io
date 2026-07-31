@@ -1,26 +1,49 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Blog</title>
-    <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-      }
-      iframe {
-        width: 100%;
-        height: 100%;
-        border: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <iframe
-      src="https://emberwood-blog-production.up.railway.app"
-      title="Blog"
-    ></iframe>
-  </body>
-</html>
+---
+layout: default
+title: Blog
+---
+
+<section class="hero" aria-labelledby="page-title">
+  <p class="eyebrow">/Blog</p>
+  <h1 id="page-title">Notes on building, systems, and useful ideas.</h1>
+  <p class="intro">Short essays and working notes, written in Markdown and published from Obsidian.</p>
+</section>
+
+<section class="archive" aria-label="Posts">
+  <aside class="filters" aria-label="Topics">
+    <p class="section-label">/Topics</p>
+    <div class="filter active">All <span>{{ site.posts | size }}</span></div>
+    {% assign tags = site.tags | sort %}
+    {% for tag in tags %}
+      <div class="filter">{{ tag[0] }} <span>{{ tag[1] | size }}</span></div>
+    {% endfor %}
+  </aside>
+
+  <div class="post-list">
+    <div class="list-header" aria-hidden="true">
+      <span>/Date</span>
+      <span>/Name</span>
+    </div>
+
+    {% for post in site.posts %}
+      <article class="post-row">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+        <div>
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          {% if post.description %}
+            <p>{{ post.description }}</p>
+          {% endif %}
+          {% if post.tags.size > 0 %}
+            <ul class="tags" aria-label="Topics">
+              {% for tag in post.tags %}
+                <li>{{ tag }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </article>
+    {% else %}
+      <p class="empty">No posts yet.</p>
+    {% endfor %}
+  </div>
+</section>

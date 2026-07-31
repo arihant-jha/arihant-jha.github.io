@@ -1,0 +1,20 @@
+title: axh
+description: Notes on building, systems, and useful ideas.
+url: "https://arihant-jha.github.io"
+baseurl: ""
+lang: en
+timezone: Asia/Kolkata
+permalink: /:year/:month/:day/:title/
+
+markdown: kramdown
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - deploy.sh
