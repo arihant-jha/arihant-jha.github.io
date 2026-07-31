@@ -28,34 +28,11 @@ a {
 
 a:hover { text-decoration: underline; }
 
-.site-header,
 main {
   width: calc(100% - 24px);
   margin-inline: auto;
 }
 
-.site-header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: start;
-  min-height: 92px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--ink);
-}
-
-.mark {
-  width: fit-content;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-nav {
-  display: flex;
-  gap: 24px;
-  font-size: 13px;
-}
-
-nav span,
 .eyebrow,
 .section-label,
 .list-header,
@@ -72,6 +49,12 @@ nav span,
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+.hero-minimal {
+  min-height: 180px;
+  padding-top: 14px;
+  border-top: 1px solid var(--ink);
 }
 
 .eyebrow,
@@ -94,6 +77,10 @@ nav span,
 }
 
 .hero h1 span { color: var(--muted); }
+
+.hero-minimal .intro {
+  margin-top: 76px;
+}
 
 .intro {
   max-width: 620px;
@@ -262,17 +249,16 @@ nav span,
 .empty { color: var(--muted); }
 
 @media (max-width: 760px) {
-  .site-header {
-    min-height: 108px;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 5px;
-  }
-
   .hero {
     min-height: 250px;
+  }
+
+  .hero-minimal {
+    min-height: 158px;
+  }
+
+  .hero-minimal .intro {
+    margin-top: 58px;
   }
 
   .hero h1 {
