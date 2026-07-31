@@ -23,7 +23,6 @@ title: Blog
     <div class="list-header" aria-hidden="true">
       <span>/Date</span>
       <span>/Name</span>
-      <span>/Link</span>
     </div>
 
     {% for post in site.posts %}
@@ -42,7 +41,6 @@ title: Blog
             </ul>
           {% endif %}
         </div>
-        <a class="read-link" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title }}">Read</a>
       </article>
     {% else %}
       <p class="empty">No posts yet.</p>
