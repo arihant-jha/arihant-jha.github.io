@@ -18,3 +18,8 @@ defaults:
 exclude:
   - README.md
   - deploy.sh
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - .jekyll-cache

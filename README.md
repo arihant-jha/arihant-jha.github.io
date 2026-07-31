@@ -40,3 +40,15 @@ OBSIDIAN_BLOG_DIR="/path/to/blogs" ./deploy.sh
 ```
 
 The script validates each note's YAML, creates Jekyll-compatible filenames in `_posts/`, commits the changes, and pushes to GitHub Pages.
+
+## Local preview
+
+Use Homebrew Ruby 3.3 for local Jekyll builds:
+
+```bash
+BUNDLE_PATH=vendor/bundle-ruby33 /opt/homebrew/opt/ruby@3.3/bin/bundle install
+BUNDLE_PATH=vendor/bundle-ruby33 /opt/homebrew/opt/ruby@3.3/bin/bundle exec jekyll build
+cd _site && python3 -m http.server 4173
+```
+
+Then open `http://localhost:4173`.

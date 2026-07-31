@@ -44,16 +44,16 @@ main {
 }
 
 .hero {
-  min-height: 292px;
-  padding: 24px 0 32px;
+  min-height: 260px;
+  padding: 24px 0 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
 .hero-minimal {
-  min-height: 180px;
-  padding-top: 14px;
+  min-height: 238px;
+  padding-top: 26px;
   border-top: 1px solid var(--ink);
 }
 
@@ -79,7 +79,7 @@ main {
 .hero h1 span { color: var(--muted); }
 
 .hero-minimal .intro {
-  margin-top: 76px;
+  margin-top: 112px;
 }
 
 .intro {
@@ -91,9 +91,9 @@ main {
 
 .archive {
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: 52px;
-  padding: 18px 0 120px;
+  grid-template-columns: minmax(160px, 32vw) minmax(0, 1fr);
+  gap: 74px;
+  padding: 36px 0 120px;
   border-top: 1px solid var(--ink);
 }
 
@@ -144,10 +144,11 @@ main {
 .post-row h2 {
   max-width: 950px;
   margin: 0;
-  font-size: 40px;
+  font-size: 34px;
   font-weight: 350;
-  line-height: 1.06;
+  line-height: 1.12;
   letter-spacing: 0;
+  overflow-wrap: anywhere;
 }
 
 .post-row p {
@@ -171,12 +172,13 @@ main {
 }
 
 .post {
-  max-width: 920px;
-  padding: 52px 0 120px;
+  max-width: 1120px;
+  padding: 26px 0 120px;
 }
 
 .post-header {
-  padding-bottom: 40px;
+  padding: 24px 0 38px;
+  border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--ink);
 }
 
@@ -187,11 +189,13 @@ main {
 }
 
 .post-header h1 {
-  margin: 80px 0 20px;
-  font-size: 72px;
+  max-width: 980px;
+  margin: 96px 0 22px;
+  font-size: clamp(46px, 5.6vw, 76px);
   font-weight: 300;
-  line-height: .98;
+  line-height: 1.02;
   letter-spacing: 0;
+  overflow-wrap: anywhere;
 }
 
 .post-header > p {
@@ -250,15 +254,16 @@ main {
 
 @media (max-width: 760px) {
   .hero {
-    min-height: 250px;
+    min-height: 220px;
   }
 
   .hero-minimal {
-    min-height: 158px;
+    min-height: 188px;
+    padding-top: 18px;
   }
 
   .hero-minimal .intro {
-    margin-top: 58px;
+    margin-top: 76px;
   }
 
   .hero h1 {
@@ -268,7 +273,7 @@ main {
 
   .archive {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 32px;
     padding-bottom: 80px;
   }
 
@@ -286,11 +291,15 @@ main {
     grid-row: auto;
   }
 
-  .post-row h2 { font-size: 30px; }
+  .post-row h2 { font-size: 28px; }
 
   .post-header h1 {
-    margin-top: 56px;
-    font-size: 48px;
+    margin-top: 64px;
+    font-size: 44px;
+  }
+
+  .post-meta {
+    align-items: flex-start;
   }
 
   .prose { font-size: 17px; }

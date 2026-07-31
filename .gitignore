@@ -12,3 +12,7 @@ env/
 dist/
 .sesskey
 .codex/
+/.bundle/
+/vendor/bundle/
+/vendor/bundle-ruby34/
+/vendor/bundle-ruby33/
