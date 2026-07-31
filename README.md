@@ -4,6 +4,12 @@ Static Markdown blog for https://arihant-jha.github.io.
 
 The site is built by GitHub Pages with Jekyll. Posts live in `_posts/` and can be written from Obsidian as Markdown.
 
+Open this folder in Obsidian:
+
+```text
+~/Documents/blog
+```
+
 ## Post format
 
 Use Jekyll post filenames:
@@ -24,9 +30,21 @@ tags: [building, systems]
 ---
 ```
 
-## Publish from Obsidian
+## Publish
 
-Put posts in either:
+If this repo is your Obsidian vault, write posts directly in:
+
+```text
+_posts
+```
+
+Then run:
+
+```bash
+./deploy.sh
+```
+
+If you prefer a separate Obsidian folder, put posts in either:
 
 ```text
 $OBSIDIAN_BLOG_DIR/_posts

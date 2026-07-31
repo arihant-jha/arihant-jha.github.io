@@ -1,5 +1,9 @@
 __pycache__/
 *.pyc
+.DS_Store
+.jekyll-cache/
+.sass-cache/
+_site/
 .env
 venv/
 env/
