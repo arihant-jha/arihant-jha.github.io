@@ -29,22 +29,24 @@ if [[ ! -d "$POST_SOURCE" ]]; then
   exit 1
 fi
 
-mkdir -p "$ROOT/_posts"
+mkdir -p "$ROOT/_posts" "$ROOT/assets/attachments"
 GENERATED_POSTS="$(mktemp -d)"
-trap 'rm -rf "$GENERATED_POSTS"; cleanup' EXIT
+GENERATED_ATTACHMENTS="$(mktemp -d)"
+trap 'rm -rf "$GENERATED_POSTS" "$GENERATED_ATTACHMENTS"; cleanup' EXIT
 
-ruby "$ROOT/scripts/prepare_posts.rb" "$POST_SOURCE" "$GENERATED_POSTS"
+ruby "$ROOT/scripts/prepare_posts.rb" "$POST_SOURCE" "$GENERATED_POSTS" "$GENERATED_ATTACHMENTS"
 rsync -av --delete "$GENERATED_POSTS/" "$ROOT/_posts/"
+rsync -av --delete "$GENERATED_ATTACHMENTS/" "$ROOT/assets/attachments/"
 
-git add _posts
+git add _posts assets/attachments
 
-if git diff --cached --quiet; then
+if git diff --cached --quiet -- _posts assets/attachments; then
   echo "No blog changes to publish."
   printf '[%s] publish check finished\n' "$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
   exit 0
 fi
 
-git commit -m "Publish blog updates"
+git commit -m "Publish blog updates" -- _posts assets/attachments
 git push
 
 printf '[%s] publish check finished\n' "$(date -u '+%Y-%m-%dT%H:%M:%SZ')"

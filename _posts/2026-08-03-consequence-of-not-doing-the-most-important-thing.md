@@ -16,7 +16,7 @@ Imagine the possibilities and then compare them
 
 **Possibility 1** — I'm able to solve an IMO problem, that looks something like this:
 
-![[Pasted image 20260803144858.png]]
+![Pasted image 20260803144858](/assets/attachments/pasted-image-20260803144858-cc5a0594c3.png)
 
 **Possibility 2** — 100 businesses are using FlexyOps to run their business, creating new knowledge and knowledge is being disseminated and helping other businesses.
 

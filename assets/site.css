@@ -221,8 +221,59 @@ main {
 }
 
 .post {
-  max-width: 1120px;
+  min-width: 0;
+  max-width: 780px;
   padding: 26px 0 120px;
+}
+
+.post-shell {
+  display: grid;
+  grid-template-columns: minmax(190px, 260px) minmax(0, 780px);
+  gap: clamp(38px, 6vw, 96px);
+  align-items: start;
+  max-width: 1180px;
+  margin-inline: auto;
+}
+
+.post-sidebar {
+  position: sticky;
+  top: 26px;
+  padding: 26px 0 0;
+}
+
+.post-nav {
+  display: grid;
+  gap: 0;
+  margin-top: 44px;
+  border-top: 1px solid var(--ink);
+}
+
+.post-nav-link {
+  display: grid;
+  gap: 7px;
+  padding: 14px 0 16px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--muted);
+}
+
+.post-nav-link:hover {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.post-nav-link.active {
+  color: var(--ink);
+}
+
+.post-nav-link time {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.post-nav-link span {
+  font-size: 15px;
+  line-height: 1.3;
 }
 
 .post-header {
@@ -256,7 +307,8 @@ main {
 }
 
 .prose {
-  max-width: 720px;
+  max-width: 680px;
+  margin-inline: auto;
   padding-top: 42px;
   font-size: 18px;
   line-height: 1.72;
@@ -297,6 +349,28 @@ main {
 .prose pre code {
   padding: 0;
   background: transparent;
+}
+
+.prose img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 28px auto;
+  border: 1px solid var(--rule);
+}
+
+.prose blockquote {
+  margin: 0 0 28px;
+  padding: 0 0 0 28px;
+  border-left: 1px solid var(--rule);
+  color: var(--muted);
+}
+
+.prose hr {
+  margin: 36px 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
 }
 
 .empty { color: var(--muted); }
@@ -347,11 +421,38 @@ main {
     font-size: 44px;
   }
 
+  .post-shell {
+    display: block;
+    max-width: none;
+  }
+
+  .post-sidebar {
+    position: static;
+    padding-top: 18px;
+  }
+
+  .post-nav {
+    display: flex;
+    gap: 14px;
+    margin-top: 22px;
+    padding-bottom: 10px;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .post-nav-link {
+    min-width: 220px;
+    border-bottom: 0;
+  }
+
   .post-meta {
     align-items: flex-start;
   }
 
-  .prose { font-size: 17px; }
+  .prose {
+    max-width: none;
+    font-size: 17px;
+  }
   .prose h2 { font-size: 29px; }
 
 }

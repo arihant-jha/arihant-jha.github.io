@@ -2,26 +2,39 @@
 layout: default
 ---
 
-<article class="post">
-  <header class="post-header">
-    <div class="post-meta">
-      <a class="back-link" href="{{ '/' | relative_url }}">Arihant Jha / Writing</a>
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
-    </div>
-    <h1>{{ page.title }}</h1>
-    {% if page.description %}
-      <p>{{ page.description }}</p>
-    {% endif %}
-    {% if page.tags.size > 0 %}
-      <ul class="tags" aria-label="Topics">
-        {% for tag in page.tags %}
-          <li>[{{ tag }}]</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  </header>
+<div class="post-shell">
+  <aside class="post-sidebar" aria-label="Other posts">
+    <a class="back-link" href="{{ '/' | relative_url }}">Arihant Jha / Writing</a>
+    <nav class="post-nav">
+      {% for post in site.posts %}
+        <a class="post-nav-link{% if post.url == page.url %} active{% endif %}" href="{{ post.url | relative_url }}">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+          <span>{{ post.title }}</span>
+        </a>
+      {% endfor %}
+    </nav>
+  </aside>
 
-  <div class="prose">
-    {{ content }}
-  </div>
-</article>
+  <article class="post">
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
+      </div>
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}
+        <p>{{ page.description }}</p>
+      {% endif %}
+      {% if page.tags.size > 0 %}
+        <ul class="tags" aria-label="Topics">
+          {% for tag in page.tags %}
+            <li>[{{ tag }}]</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </header>
+
+    <div class="prose">
+      {{ content }}
+    </div>
+  </article>
+</div>

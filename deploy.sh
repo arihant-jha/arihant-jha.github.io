@@ -12,15 +12,18 @@ if [[ ! -d "$POST_SOURCE" ]]; then
 fi
 
 mkdir -p "$ROOT/_posts"
+mkdir -p "$ROOT/assets/attachments"
 GENERATED_POSTS="$(mktemp -d)"
-trap 'rm -rf "$GENERATED_POSTS"' EXIT
+GENERATED_ATTACHMENTS="$(mktemp -d)"
+trap 'rm -rf "$GENERATED_POSTS" "$GENERATED_ATTACHMENTS"' EXIT
 
-ruby "$ROOT/scripts/prepare_posts.rb" "$POST_SOURCE" "$GENERATED_POSTS"
+ruby "$ROOT/scripts/prepare_posts.rb" "$POST_SOURCE" "$GENERATED_POSTS" "$GENERATED_ATTACHMENTS"
 rsync -av --delete "$GENERATED_POSTS/" "$ROOT/_posts/"
+rsync -av --delete "$GENERATED_ATTACHMENTS/" "$ROOT/assets/attachments/"
 
 cd "$ROOT"
 
-git add README.md _config.yml index.html 404.html robots.txt feed.xml sitemap.xml _layouts assets _posts scripts deploy.sh .gitignore
+git add README.md _config.yml index.html 404.html robots.txt feed.xml sitemap.xml _layouts assets _posts scripts deploy.sh .gitignore .github
 
 if git diff --cached --quiet; then
   echo "No blog changes to publish."
