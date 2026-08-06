@@ -12,6 +12,8 @@ env/
 dist/
 .sesskey
 .codex/
+logs/
+/.publish.lock/
 /.bundle/
 /vendor/bundle/
 /vendor/bundle-ruby34/
