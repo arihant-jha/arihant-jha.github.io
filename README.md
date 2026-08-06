@@ -41,16 +41,6 @@ OBSIDIAN_BLOG_DIR="/path/to/blogs" ./deploy.sh
 
 The script validates each note's YAML, creates Jekyll-compatible filenames in `_posts/`, commits the changes, and pushes to GitHub Pages.
 
-## Hourly publishing
-
-Cron runs the publish check once per hour:
-
-```cron
-0 * * * * /Users/arihant/Documents/blog/scripts/cron_publish.sh >> /Users/arihant/Documents/blog/logs/cron_publish.log 2>&1
-```
-
-The wrapper regenerates `_posts/` from the Obsidian blog folder, then commits and pushes only when that generated output changes. Logs are written to `logs/cron_publish.log`.
-
 ## Local preview
 
 Use Homebrew Ruby 3.3 for local Jekyll builds:

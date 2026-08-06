@@ -16,7 +16,7 @@ GENERATED_POSTS="$(mktemp -d)"
 trap 'rm -rf "$GENERATED_POSTS"' EXIT
 
 ruby "$ROOT/scripts/prepare_posts.rb" "$POST_SOURCE" "$GENERATED_POSTS"
-rsync -av --delete "$GENERATED_POSTS/" "$ROOT/_posts/"
+rsync -av "$GENERATED_POSTS/" "$ROOT/_posts/"
 
 cd "$ROOT"
 
