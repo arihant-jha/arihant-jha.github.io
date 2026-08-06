@@ -55,8 +55,66 @@ def convert_obsidian_embeds(markdown, attachment_index, attachments_dir)
   end
 end
 
-def strip_obsidian_plugin_blocks(markdown)
-  markdown.gsub(/^```table-of-contents\s*\n.*?^```\s*\n?/m, "")
+def slugify_heading(heading)
+  heading
+    .downcase
+    .gsub(/<[^>]+>/, "")
+    .gsub(/['’\/]/, "")
+    .gsub(/[`*_~\[\]\(\)]/, "")
+    .gsub(/[^a-z0-9]+/, "-")
+    .gsub(/\A-+|-+\z/, "")
+end
+
+def markdown_headings(markdown)
+  in_fence = false
+
+  markdown.lines.filter_map do |line|
+    if line.match?(/^\s*```/)
+      in_fence = !in_fence
+      next
+    end
+
+    next if in_fence
+
+    match = line.match(/^(\#{1,6})\s+(.+?)\s*#*\s*$/)
+    next unless match
+
+    title = match[2].strip
+    next if title.casecmp("contents").zero?
+
+    { level: match[1].length, title: title, slug: slugify_heading(title) }
+  end
+end
+
+def render_table_of_contents(markdown)
+  headings = markdown_headings(markdown)
+  return "" if headings.empty?
+
+  min_level = headings.map { |heading| heading[:level] }.min
+  headings.map do |heading|
+    indent = "    " * (heading[:level] - min_level)
+    "#{indent}1. [#{heading[:title]}](##{heading[:slug]})"
+  end.join("\n") + "\n\n"
+end
+
+def convert_obsidian_toc_blocks(markdown)
+  markdown.gsub(/^```table-of-contents\s*\n.*?^```\s*\n?/m) do
+    render_table_of_contents(markdown[Regexp.last_match.end(0)..] || markdown)
+  end
+end
+
+def convert_obsidian_links(markdown)
+  markdown.gsub(/\[\[([^\]\n]+)\]\]/) do
+    raw_target = Regexp.last_match(1)
+    target, label = raw_target.split("|", 2).map { |part| part.to_s.strip }
+
+    if target.start_with?("#")
+      heading = target.delete_prefix("#")
+      "[#{label && !label.empty? ? label : heading}](##{slugify_heading(heading)})"
+    else
+      label && !label.empty? ? label : target
+    end
+  end
 end
 
 post_paths.each do |path|
@@ -90,8 +148,9 @@ post_paths.each do |path|
   end
 
   destinations[destination] = path
-  content = strip_obsidian_plugin_blocks(content)
+  content = convert_obsidian_toc_blocks(content)
   content = convert_obsidian_embeds(content, attachment_index, attachments_dir)
+  content = convert_obsidian_links(content)
   File.write(destination, content)
 end
 
