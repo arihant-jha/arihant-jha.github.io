@@ -63,3 +63,16 @@ n = 5
 n = 3
 
 66hrs, 22hrs, 7.5hrs
+
+
+12/ Possibility matters more than Probability
+
+Success of a startup is very low probability event, success of humans going to mars is low probability, success of me becoming a gradmaster or an olympian is low probability event.
+
+Does that makes it less worth pursuing them? Think about the same for these questions:
+
+Probability of ancient humans discovering fire were very low, discovering the wheel very low, the british enlightenment happening and us starting to create scientific knowledge very low, humans as a species surviving for so long very low. And now go back to the time before these discoveries and think: Was trying to pursue these goals less worth? Would it have been better those humans accepted the fate of probability? The answer is obvious.
+
+Human lives don't run on Probability, it runs on Possibilities and because humans are falliable, it's obvious we should pursue more ambitious knowledge creation endavours; thus probability should never decide what to aim for, it should be result of the function: MAX(ambition, importance, impact on humanity, 0.1\*survival) 
+
+*Note: Importance is importance to you, and it is correlated to what seems like an interesting possibility; you only have limited time, so pick the most important problem => the most interesting possibilty you would like to make happen)
