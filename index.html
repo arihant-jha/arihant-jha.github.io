@@ -9,15 +9,6 @@ title: Writing
 </section>
 
 <section class="archive" aria-label="Posts">
-  <aside class="filters" aria-label="Topics">
-    <p class="section-label">/Topics</p>
-    <div class="filter active">All <span>{{ site.posts | size }}</span></div>
-    {% assign tags = site.tags | sort %}
-    {% for tag in tags %}
-      <div class="filter">{{ tag[0] }} <span>{{ tag[1] | size }}</span></div>
-    {% endfor %}
-  </aside>
-
   <div class="post-list">
     <div class="list-header" aria-hidden="true">
       <span>/Date</span>

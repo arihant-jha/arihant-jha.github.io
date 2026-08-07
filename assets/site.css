@@ -139,32 +139,9 @@ main {
 }
 
 .archive {
-  display: grid;
-  grid-template-columns: minmax(160px, 32vw) minmax(0, 1fr);
-  gap: 74px;
+  display: block;
   padding: 36px 0 120px;
   border-top: 1px solid var(--ink);
-}
-
-.filters {
-  position: sticky;
-  top: 12px;
-  align-self: start;
-}
-
-.filter {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 9px 0;
-  border-bottom: 1px solid var(--rule);
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.filter.active {
-  border-color: var(--ink);
-  color: var(--ink);
 }
 
 .list-header,
@@ -395,12 +372,8 @@ main {
   }
 
   .archive {
-    grid-template-columns: 1fr;
-    gap: 32px;
     padding-bottom: 80px;
   }
-
-  .filters { position: static; }
 
   .list-header { display: none; }
 
