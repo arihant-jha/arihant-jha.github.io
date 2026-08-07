@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arihant-jha.github.io/sitemap.xml

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Evolution of CS and Theories with most reach | axh</title>
+    <meta name="description" content="Notes on building, systems, and useful ideas.">
+    <link rel="canonical" href="https://arihant-jha.github.io/2026/08/06/evolution-of-cs-and-theories-with-most-reach/">
+    <link rel="alternate" type="application/atom+xml" title="axh" href="https://arihant-jha.github.io/feed.xml">
+    <meta property="og:title" content="Evolution of CS and Theories with most reach">
+    <meta property="og:description" content="Notes on building, systems, and useful ideas.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://arihant-jha.github.io/2026/08/06/evolution-of-cs-and-theories-with-most-reach/">
+    
+      <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [["$", "$"], ["\\(", "\\)"]],
+            displayMath: [["$$", "$$"], ["\\[", "\\]"]]
+          }
+        };
+      </script>
+      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    
+    <script>
+      (function () {
+        var theme;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (error) {
+          theme = null;
+        }
+
+        if (theme === "light" || theme === "dark") {
+          document.documentElement.dataset.theme = theme;
+        }
+      }());
+    </script>
+    <link rel="stylesheet" href="/assets/site.css">
+  </head>
+  <body>
+    <button class="theme-toggle" type="button" aria-label="Switch color theme">Theme</button>
+    <main>
+      <div class="post-shell">
+  <aside class="post-sidebar" aria-label="Other posts">
+    <a class="back-link" href="/">Arihant Jha / Writing</a>
+    <nav class="post-nav">
+      
+        <a class="post-nav-link" href="/2026/08/06/note-to-myself/">
+          <time datetime="2026-08-06T00:00:00+05:30">2026.08.06</time>
+          <span>Note to myself</span>
+        </a>
+      
+        <a class="post-nav-link" href="/2026/08/06/important-problems/">
+          <time datetime="2026-08-06T00:00:00+05:30">2026.08.06</time>
+          <span>Important Problems</span>
+        </a>
+      
+        <a class="post-nav-link active" href="/2026/08/06/evolution-of-cs-and-theories-with-most-reach/">
+          <time datetime="2026-08-06T00:00:00+05:30">2026.08.06</time>
+          <span>Evolution of CS and Theories with most reach</span>
+        </a>
+      
+        <a class="post-nav-link" href="/2026/08/03/consequence-of-not-doing-the-most-important-thing/">
+          <time datetime="2026-08-03T00:00:00+05:30">2026.08.03</time>
+          <span>Consequence of not doing the most important thing</span>
+        </a>
+      
+    </nav>
+  </aside>
+
+  <article class="post">
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="2026-08-06T00:00:00+05:30">2026.08.06</time>
+      </div>
+      <h1>Evolution of CS and Theories with most reach</h1>
+      
+      
+        <ul class="tags" aria-label="Topics">
+          
+            <li>[Draft]</li>
+          
+        </ul>
+      
+    </header>
+
+    <div class="prose">
+      <ol>
+  <li><a href="#list-of-important-theories">List of Important Theories</a></li>
+</ol>
+
+<h2 id="list-of-important-theories">List of Important Theories</h2>
+
+<ol>
+  <li>Solving a real human problem by the theories below</li>
+  <li>Information for consumption through pages and linking them. ex: wikipedia, obsidian</li>
+  <li>Programs to solve problems [1]</li>
+  <li>Ontology - The language to make sense of the data.</li>
+  <li>Making these programs efficient - DS/Algorithms</li>
+  <li>Universal Turing Machine</li>
+  <li>Memory, Compute and Network</li>
+  <li>Protocols</li>
+  <li>Conjecturing a program to solve a problem and testing it.</li>
+  <li>Data and managing data flow using Databases Engine - a program to efficiently Read/Write data.</li>
+  <li>Information Retrieval</li>
+  <li>Data Collection: Real World or through Simulation</li>
+  <li>Evaluation and Testing</li>
+  <li>Probability: Thinking in terms of distributions, chances and how many times you get to play them.</li>
+  <li>Linear Algebra: Manipulating not just a point but a set.</li>
+  <li>Imitation Learning &amp; Finetuning</li>
+  <li>Reinforcement Learning: Policy Optimization — RLHF, RLVR</li>
+  <li>LLMs: A Dictionary from seen knowledge base.</li>
+  <li>Capturing Input: Text/Vision/Sound/Touch/Taste?/Smell?</li>
+  <li>Manipulating Actuators: Browsers/Programs/Memory/Motors/Any Interface Really</li>
+  <li>Making sense of the data being captured and updating the program: AutoResearch</li>
+  <li>[21] updating wiki [1]</li>
+  <li>LLMs and Humans Together creating Explainatory Theories from the mess of data being generated, creating ontologies and process to capture -&gt; create/update human representation -&gt; act -&gt; create new explainations and using them to act.</li>
+</ol>
+
+    </div>
+  </article>
+</div>
+
+    </main>
+    <script>
+      (function () {
+        var button = document.querySelector(".theme-toggle");
+        var media = window.matchMedia("(prefers-color-scheme: dark)");
+
+        function activeTheme() {
+          return document.documentElement.dataset.theme || (media.matches ? "dark" : "light");
+        }
+
+        function render() {
+          var theme = activeTheme();
+          button.textContent = theme === "dark" ? "Light" : "Dark";
+          button.setAttribute("aria-label", "Switch to " + button.textContent.toLowerCase() + " mode");
+        }
+
+        button.addEventListener("click", function () {
+          var next = activeTheme() === "dark" ? "light" : "dark";
+          document.documentElement.dataset.theme = next;
+          try {
+            localStorage.setItem("theme", next);
+          } catch (error) {
+            /* Preference persistence is optional. */
+          }
+
+          render();
+        });
+
+        media.addEventListener("change", function () {
+          if (!document.documentElement.dataset.theme) render();
+        });
+
+        render();
+      }());
+    </script>
+  </body>
+</html>

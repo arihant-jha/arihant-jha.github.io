@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>axh</title>
+  <subtitle>Notes on building, systems, and useful ideas.</subtitle>
+  <link href="https://arihant-jha.github.io/feed.xml" rel="self"/>
+  <link href="https://arihant-jha.github.io/"/>
+  <updated>2026-08-07T12:41:25+05:30</updated>
+  <id>https://arihant-jha.github.io/</id>
+  
+  <entry>
+    <title>Note to myself</title>
+    <link href="https://arihant-jha.github.io/2026/08/06/note-to-myself/"/>
+    <updated>2026-08-06T00:00:00+05:30</updated>
+    <id>https://arihant-jha.github.io/2026/08/06/note-to-myself/</id>
+    <summary>1/ You are worthy, because you are a human.</summary>
+  </entry>
+  
+  <entry>
+    <title>Important Problems</title>
+    <link href="https://arihant-jha.github.io/2026/08/06/important-problems/"/>
+    <updated>2026-08-06T00:00:00+05:30</updated>
+    <id>https://arihant-jha.github.io/2026/08/06/important-problems/</id>
+    <summary>Solved and Important Problems</summary>
+  </entry>
+  
+  <entry>
+    <title>Evolution of CS and Theories with most reach</title>
+    <link href="https://arihant-jha.github.io/2026/08/06/evolution-of-cs-and-theories-with-most-reach/"/>
+    <updated>2026-08-06T00:00:00+05:30</updated>
+    <id>https://arihant-jha.github.io/2026/08/06/evolution-of-cs-and-theories-with-most-reach/</id>
+    <summary>List of Important Theories</summary>
+  </entry>
+  
+  <entry>
+    <title>Consequence of not doing the most important thing</title>
+    <link href="https://arihant-jha.github.io/2026/08/03/consequence-of-not-doing-the-most-important-thing/"/>
+    <updated>2026-08-03T00:00:00+05:30</updated>
+    <id>https://arihant-jha.github.io/2026/08/03/consequence-of-not-doing-the-most-important-thing/</id>
+    <summary>If you don’t pick the most important thing at the moment — this can become the source of regret.</summary>
+  </entry>
+  
+</feed>
